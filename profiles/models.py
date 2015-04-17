@@ -16,7 +16,7 @@ class Profile(LocalizableModel):
     genre = models.CharField(max_length=3, choices=GENRES.items())
     last_time_localization = models.DateTimeField(auto_now_add=True)
     description = models.TextField()
-    language_read = models.ForeignKey(Language)
+    language_read = models.ForeignKey(Language) # Lenguaje en el que va a ver la aplicación
 
     def __unicode__(self):
         return unicode(self.username)
