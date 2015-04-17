@@ -4,8 +4,10 @@ from widiom.settings.settings import *
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'widiom',
-        'USER': 'root'
+        'USER': 'admin',
+        'PASSWORD': 'admin'
+
     }
 }
