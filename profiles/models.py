@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib.auth.models import User
 from django.db import models
-from django.conf import settings
 from django.contrib.gis.db import models as gis_models
 from django.contrib.gis import geos
 from languages.models import Language
@@ -9,7 +8,7 @@ from profiles.settings import GENRES
 
 
 class Profile(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name=u'user', blank=True, null=True, editable=False)
+    user = models.ForeignKey(User, null=True, blank=True)
     username = models.CharField(max_length=64)
     avatar = models.ImageField(upload_to='media', blank=True, null=True)
     born_date = models.DateField(blank=True, null=True)
