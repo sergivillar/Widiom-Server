@@ -6,10 +6,9 @@ from django.contrib.gis.db import models as gis_models
 from django.contrib.gis import geos
 from languages.models import Language
 from profiles.settings import GENRES
-from widiom.models import LocalizableModel
 
 
-class Profile(LocalizableModel):
+class Profile(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name=u'user', blank=True, null=True, editable=False)
     username = models.CharField(max_length=64)
     avatar = models.ImageField(upload_to='media', blank=True, null=True)
