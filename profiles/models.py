@@ -20,5 +20,12 @@ class Profile(LocalizableModel):
     description = models.TextField(blank=True, null=True)
     language_read = models.ForeignKey(Language, blank=True, null=True) # Lenguaje en el que va a ver la aplicación
 
+    # Filters
+    filter_min_age = models.PositiveSmallIntegerField(blank=True, null=True)
+    filter_max_age = models.PositiveSmallIntegerField(blank=True, null=True)
+    filter_men = models.BooleanField(default=True)
+    filter_women = models.BooleanField(default=True)
+    filter_range = models.IntegerField(default=2500) # Distancia para buscar en metros
+
     def __unicode__(self):
         return unicode(self.username)
